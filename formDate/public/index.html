@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            console.log(xhr.responseText)
+        }
+    }
+//    formDate数据格式
+    var date = new FormData();
+    date.append("name","hah");//append方法添加数据
+    date.append("score",5);
+    date.append("des","不错不错!!!");
+    xhr.open("POST","/test");
+    xhr.send(date);
+</script>

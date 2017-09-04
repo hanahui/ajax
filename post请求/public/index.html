@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post请求</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.open("post","/test");
+//  post请求必须设置一下请求头部content-type值
+    xhr.setRequestHeader("Content-Type","x-www-form-urlencoded");
+//    post请求的数据在send里面 以字符串的形式传递
+    xhr.send("name=hah&price=5&des=非常不错的体验");
+</script>
